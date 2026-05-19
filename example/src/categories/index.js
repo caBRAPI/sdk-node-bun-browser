@@ -13,6 +13,20 @@ client.categories
     console.log(err);
   });
 
+// GET /stores/:storeId/categories/:categoryId/products (public)
+client.products
+  .getByCategory(
+    "3b751276-101d-48ba-8fb1-bb8e4bbf4277",
+    "71b1abcf-54dd-4003-958b-4bd67c936036",
+    { page: 1, limit: 20 },
+  )
+  .then((res) => {
+    console.log("products by category", res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 // GET /stores/:storeId/categories/:categoryId (private)
 client.categories
   .getById(

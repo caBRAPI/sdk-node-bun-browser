@@ -1,6 +1,7 @@
 import type { CoreClient } from "../../client";
 import { deleteProduct } from "./http/delete";
 import { getProducts } from "./http/get";
+import { getProductsByCategory } from "./http/get-by-category";
 import { getProductById } from "./http/get-by-id";
 import { createProduct } from "./http/post";
 import { updateProduct } from "./http/put";
@@ -108,6 +109,14 @@ export class Products {
 
   get(storeId: string, input: GetProductsInput = {}) {
     return getProducts(this.core, storeId, input);
+  }
+
+  getByCategory(
+    storeId: string,
+    categoryId: string,
+    input: GetProductsInput = {},
+  ) {
+    return getProductsByCategory(this.core, storeId, categoryId, input);
   }
 
   getById(storeId: string, productId: string) {
