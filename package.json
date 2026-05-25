@@ -8,6 +8,15 @@
   "types": "./dist/index.d.ts",
   "author": "Sebastian Jn <sebastianjnuwu@gmail.com>",
   "license": "Apache-2.0",
+  "keywords": [
+    "cabrapi",
+    "sdk",
+    "node",
+    "browser",
+    "bun",
+    "api",
+    "client"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -35,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caBRAPI/sdk-node-browser"
+    "url": "https://github.com/caBRAPI/sdk-node-bun-browser.git"
   },
   "engines": {
     "node": ">=18"
