@@ -6,9 +6,9 @@ A segurança deste SDK é tratada com prioridade. Se você identificar uma vulne
 
 Envie os detalhes por um dos canais abaixo:
 
-* Envie um e-mail para o setor responsavel `suporte@cabrapi.com.br` 
+* Envie um e-mail para o setor responsável `suporte@cabrapi.com.br` 
 
-* Ou envie um e-mail diretamente para o desenvolvedor responsavel `sebastianjnuwu@gmail.com`.
+* Ou envie um e-mail diretamente para o desenvolvedor responsável `sebastianjnuwu@gmail.com`.
 
 ## Informações importantes no reporte
 
@@ -30,7 +30,7 @@ Sempre que possível, inclua:
 
 ## Processo de resposta
 
-Nos comprometemos a seguir um processo de divulgação responsável:
+Nós comprometemos a seguir um processo de divulgação responsável:
 
 1. Confirmamos o recebimento do reporte em até **72 horas**
 2. Investigamos o problema e avaliamos o impacto
