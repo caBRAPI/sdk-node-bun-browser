@@ -1,7 +1,7 @@
 {
   "name": "@cabrapi/sdk",
-  "version": "1.0.0-alpha.2",
-  "description": "SDK oficial da caBRAPI para Node.js e Browser",
+  "version": "1.0.1",
+  "description": "SDK oficial da caBRAPI para Node.js, Bun e Browser",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
