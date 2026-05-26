@@ -44,8 +44,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caBRAPI/sdk-node-bun-browser.git"
-  },
+    "url": "https://github.com/caBRAPI/sdk-node-bun-browser"
+  },                                          
   "engines": {
     "node": ">=18"
   }
