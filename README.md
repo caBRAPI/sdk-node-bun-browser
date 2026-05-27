@@ -89,9 +89,3 @@ const client = new caBRAPI({
 | **Node.js** (modo privado) | `>= 18.x` |
 | **Browsers** (modo público) | ES2020+ |
 | **TypeScript** | Suporte nativo ✅ |
-
-## 📞 Suporte
-
-• 📚 Documentação: https://docs.cabrapi.com.br
-
-• 🐛 Issues: https://github.com/cabrapi/sdk-node-browser/issues
