@@ -45,7 +45,7 @@ function buildQuery(params?: Record<string, unknown>) {
 }
 
 export function createAxios(cfg: AxiosConfig = {}) {
-  const baseURL = cfg.baseURL ?? "https://api.cabrapi.com.br";
+  const baseURL = cfg.baseURL ?? "https://api.cabrapi.com.br/v1";
   const timeout = cfg.timeout ?? 30000;
 
   const requestInterceptors: Interceptor<AxiosRequestConfig>[] = [];
