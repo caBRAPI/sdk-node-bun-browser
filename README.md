@@ -1,91 +1,95 @@
-
 # 🚀 @cabrapi/sdk
 
-## 📋 Visão geral
+## 📋 Overview
 
-O `@cabrapi/sdk` fornece uma interface unificada e tipada para comunicação com os serviços da caBRAPI, suportando dois modos de autenticação:
+The `@cabrapi/sdk` provides a unified and typed interface for communicating with the caBRAPI services, supporting two authentication modes:
 
-| Modo | Ambiente | Emoji |
-|------|----------|-------|
-| **Público** (`public`) | Cliente (navegador) | 🌐 |
-| **Privado** (`private`) | Servidor (Node.js) | 🔒 |
+| Mode | Environment | Emoji |
+|------|-------------|-------|
+| **Public** (`public`) | Client (browser) | 🌐 |
+| **Private** (`private`) | Server (Node.js) | 🔒 |
 
-## 📦 Instalação
+## 📦 Installation
 
 ```bash
 npm install @cabrapi/sdk
 ```
 
-## 🎯 Modos de uso
+## 🎯 Usage modes
 
-### 🌐 Modo público (client-side)
+### 🌐 Public mode (client-side)
 
-> Ideal para SPAs, React, Vue, Angular e qualquer aplicação que rode no navegador.
+> Ideal for SPAs, React, Vue, Angular and any application that runs in the browser.
+> No API key needed.
 
 ```typescript
-import { caBRAPI } from '@cabrapi/sdk';
+import { caBRAPI, CoreClient } from '@cabrapi/sdk';
 
-const client = new caBRAPI({
-  type: 'public',
-  config: {} // Configuração vazia para modo público
-});
+const client = new caBRAPI(new CoreClient.Options(CoreClient.Mode.PUBLIC));
 ```
 
-### 🔒 Modo privado (server-side)
+### 🔒 Private mode (server-side)
 
-> Para operações seguras no backend com chave de API.
+> For secure backend operations with an API key.
 
 ```typescript
-import { caBRAPI } from '@cabrapi/sdk';
+import { caBRAPI, CoreClient } from '@cabrapi/sdk';
 
-const client = new caBRAPI({
-  type: 'private',
-  config: {
-    key: 'SUA_API_KEY' // 🔑 Sua chave de acesso
-  }
-});
+const client = new caBRAPI(
+  new CoreClient.Options(CoreClient.Mode.PRIVATE)
+    .apiKey('SUA_API_KEY') // 🔑 Sua chave de acesso
+);
+```
+
+> Use `baseURL()` to point to another environment (e.g., local):
+
+```typescript
+import { caBRAPI, CoreClient } from '@cabrapi/sdk';
+
+const client = new caBRAPI(
+  new CoreClient.Options(CoreClient.Mode.PRIVATE)
+    .apiKey('SUA_API_KEY')
+    .baseURL('https://api.cabrapi.com.br')
+);
 ```
 
 ### ☁️ CDN 
 
-> Use diretamente no navegador sem ferramentas de build.
+> Use directly in the browser without build tools.
 
 ```html
 <script type="module">
-  import { caBRAPI } from 'https://cdn.jsdelivr.net/npm/@cabrapi/sdk/dist/index.js';
+  import { caBRAPI, CoreClient } from 'https://cdn.jsdelivr.net/npm/@cabrapi/sdk/dist/index.js';
   
-  const client = new caBRAPI({
-    type: 'public',
-    config: {}
-  });
+  const client = new caBRAPI(new CoreClient.Options(CoreClient.Mode.PUBLIC));
 </script>
 ```
 
-## ⚙️ Configuração
+## ⚙️ Configuration
 
-### Opções do cliente
+### Options builder
 
-| Propriedade | Tipo | Obrigatório | Descrição |
-|-------------|------|-------------|-----------|
-| `type` | `'public' \| 'private'` | ✅ | Modo de autenticação |
-| `config` | `PublicConfig \| PrivateConfig` | ✅ | Configurações específicas |
+| Method | Description |
+|--------|-------------|
+| `new CoreClient.Options(CoreClient.Mode.PUBLIC)` | Public mode (no API key) |
+| `new CoreClient.Options(CoreClient.Mode.PRIVATE)` | Private mode (backend) |
+| `.apiKey('...')` | 🔑 API key (private mode) |
+| `.baseURL('...')` | Custom base URL (e.g., local environment) |
 
-### 📂 Configuração pública (`public`)
+### 📂 Public configuration (`public`)
 
-| Propriedade | Tipo | Descrição |
-|-------------|------|-------------|
-| - | - | Nenhuma configuração necessária |
+| Property | Type | Description |
+|----------|------|-------------|
+| - | - | No configuration needed |
 
-### 🔐 Configuração privada (`private`)
+### 🔐 Private mode (`private`)
 
-| Propriedade | Tipo | Descrição |
-|-------------|------|-------------|
-| `key` | `string` | 🔑 Chave da API para autenticação |
+> Restricted to the backend. Use `.apiKey()` to authenticate and `.baseURL()` to point to another environment.
 
-## 📌 Requisitos
+## 📌 Requirements
 
-| Ambiente | Versão |
-|----------|--------|
-| **Node.js** (modo privado) | `>= 18.x` |
-| **Browsers** (modo público) | ES2020+ |
-| **TypeScript** | Suporte nativo ✅ |
+| Environment | Version |
+|-------------|---------|
+| **Node.js** (private mode) | `>= 18.x` |
+| **Browsers** (public mode) | ES2020+ |
+| **TypeScript** | Native support ✅ |
