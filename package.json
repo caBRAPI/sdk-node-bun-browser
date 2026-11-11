@@ -36,7 +36,8 @@
     "format": "npx @biomejs/biome format --write"
   },
   "devDependencies": {
-    "tsup": "^8.5.1",
+    "@biomejs/biome": "^2.6.6",
+    "tsup": "^9.0.0",
     "typescript": "^6.0.3"
   },
   "publishConfig": {
@@ -45,8 +46,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/caBRAPI/sdk-node-bun-browser"
-  },                                          
+  },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.18.0"
   }
 }

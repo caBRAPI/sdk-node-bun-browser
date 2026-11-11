@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     container:
-      image: node:24-alpine
+      image: node:26-alpine
 
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
           restore-keys: node-
 
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
       - name: Biome check
-        run: npx biome check
+        run: npx @biomejs/biome check
