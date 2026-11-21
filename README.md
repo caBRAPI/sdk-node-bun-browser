@@ -1,4 +1,4 @@
-# 🚀 @cabrapi/sdk
+# @caBRAPI/sdk-node-bun-browser
 
 ## 📋 Overview
 
